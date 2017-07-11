@@ -24,7 +24,7 @@ import com.imwsoftware.mongo.model.Zip;
  *
  */
 @Repository
-public interface ZipRepository extends PagingAndSortingRepository<Zip, String> {
+public interface ZipRepository extends PagingAndSortingRepository<Zip, String>, ZipRepositoryCustom {
 
 	/**
 	 * Find by top 10 cities and page results

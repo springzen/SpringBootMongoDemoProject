@@ -1,0 +1,24 @@
+{
+	"name": "Praveen Kumar",
+	"degree": "Cloud Computing",
+	"email": "praveen@example.com",
+	"subjects": [
+		{
+			"name": "Internet Networks",
+			"prof": "Prof. Awesome Blossom"
+		},
+		{
+			"name": "Cloud Computing",
+			"prof": "Prof. Tech Ninja"
+		},
+		{
+			"name": "Web Development",
+			"prof": "Prof. Chunky Monkey"
+		}
+	],
+	"phone": [
+		"9840035007",
+		"9967728336",
+		"7772844242"
+	]
+}

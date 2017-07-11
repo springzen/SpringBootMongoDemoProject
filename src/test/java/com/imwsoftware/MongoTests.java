@@ -27,6 +27,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.imwsoftware.mongo.ZipRepository;
 import com.imwsoftware.mongo.model.Zip;
 
+/**
+ * Class: MongoTests.java
+ *
+ * @author: Springzen
+ * @since: Jul 10, 2017
+ * @version: 1.0
+ *
+ *           Copyright (c) 2017 Springzen
+ *
+ */
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = ApplicationConfig.class)
 public class MongoTests {
@@ -94,6 +104,49 @@ public class MongoTests {
 		Iterable<Zip> all = repository.findAll();
 		logger.info("Collection size: " + ((Collection<?>) all).size());
 		assertThat(((Collection<?>) all).size() > 0, is(true));
+	}
+
+	@Test
+	public void aggregateByStatePopBySize() {
+
+		try {
+			repository.aggregatePopulationBySizeGte10Million();
+		} catch (Exception e) {
+			fail("Failed to launch method. Cause: ", e.getMessage());
+		}
+
+	}
+
+	@Test
+	public void aggregateByStatePopBySizeOut() {
+
+		try {
+			repository.aggregatePopulationBySizeGte10MillionOut();
+			assertTrue(repository.stateTotalPopAggregationExists());
+		} catch (Exception e) {
+			fail("Failed to launch method. Cause: ", e.getMessage());
+		}
+
+	}
+
+	@Test
+	public void averageCityPopulationByState() {
+
+		try {
+			repository.averageCityPopulationByState();
+		} catch (Exception e) {
+			fail("Failed to launch method. Cause: ", e.getMessage());
+		}
+
+	}
+
+	@Test
+	public void returnLargestAndSmallestCityByState() {
+		try {
+			repository.returnLargestAndSmallestCityByState();
+		} catch (Exception e) {
+			fail("Failed to launch method. Cause: ", e.getMessage());
+		}
 	}
 
 }

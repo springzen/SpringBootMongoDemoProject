@@ -1,0 +1,15 @@
+[
+	{
+		"name": "Purushothaman",
+		"degree": "Management",
+		"email": "purush@example.com"
+	},
+	{
+		"name": "Meaow Meaow",
+		"degree": "Cat Study",
+		"email": "meaow@example.com",
+		"phone": [
+			"9850420420"
+		]
+	}
+]

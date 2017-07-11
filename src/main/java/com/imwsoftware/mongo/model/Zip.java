@@ -9,6 +9,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.EqualsAndHashCode;
 
+/**
+ * Class: Zip.java
+ *
+ * @author: Springzen
+ * @since: Jul 6, 2017
+ * @version: 1.0
+ *
+ *           Copyright (c) 2017 Springzen
+ *
+ */
 @EqualsAndHashCode
 @Document(collection = "zipcodes")
 public class Zip {

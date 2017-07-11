@@ -7,6 +7,16 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 
+/**
+ * Class: ApplicationConfig.java
+ *
+ * @author: Springzen
+ * @since: Jul 10, 2017
+ * @version: 1.0
+ *
+ *           Copyright (c) 2017 Springzen
+ *
+ */
 @Configuration
 @EnableMongoRepositories
 class ApplicationConfig extends AbstractMongoConfiguration {
