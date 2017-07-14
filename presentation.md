@@ -3,6 +3,10 @@ Presented by IMWSoftware LLC
 
 ---
 
+# The entire presentation is written in Markdown and it is saved in the same repository as **presentation.md**
+
+---
+
 ## [MongoDB Introduction](https://docs.mongodb.com/manual/introduction/)
 MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling.
 
@@ -79,12 +83,38 @@ mongo --port <non default port>
 
 ---
 
-## The Guide
+## The MongoDB Introduction Guide
+
 To simplify this session, I am using an already existing guide from PluralSight  
 [Introduction to MongoDB](https://github.com/pluralsight/guides/blob/master/published/sql/introduction-to-mongodb/article.md)  
 [Original](https://www.pluralsight.com/guides/sql/introduction-to-mongodb)  
 [Local](IntroToMongoDB.md)  
 
+---
+## The MongoDB Aggregation Guide
+
+This session is based on MongoDB official guide [Aggregation with the Zip Code Data Set](https://docs.mongodb.com/manual/tutorial/aggregation-zip-code-data-set/)  
+
+---
+
+#### Count all all the Springfield(s) in the USA
+
+```javascript
+db.zipcodes.aggregate(
+	[
+		{
+			$match: {
+				city: "SPRINGFIELD"
+			}
+		},
+		{
+			$count: "count"
+		},
+
+	]
+);
+```
+[How many towns or cities called Springfield are there in the US and what states are they located in?](https://www.quora.com/How-many-towns-or-cities-called-Springfield-are-there-in-the-US-and-what-states-are-they-located-in)
 
 ---
 
@@ -125,6 +155,51 @@ class ApplicationConfig extends AbstractMongoConfiguration {
 @Autowired
 MongoTemplate mongoTemplate;
 ```
+
+---
+
+## For the most part, interaction with MongoDB can be done with Spring Repositories
+
+### Most common can be accessed by simply creating a repository with a domain class as well as the id type of the domain
+
+---
+
+## Repositories
+```java
+@Repository
+public interface ZipRepository extends PagingAndSortingRepository<Zip, String> {
+}
+```
+
+---
+
+## Extending Repositories
+### When the default repository does not provide the required functionally, it can be extended. By using this approach the DAO pattern can be avoided.
+
+---
+
+## Adding custom behavior to single repositories
+* To enrich a repository with custom functionality you first define an interface and an implementation for the custom functionality. Use the repository interface you provided to extend the custom interface.
+
+---
+
+```java
+public interface ZipRepositoryCustom {
+}
+
+public class ZipRepositoryImpl implements ZipRepositoryCustom {
+}
+
+@Repository
+public interface ZipRepository extends PagingAndSortingRepository<Zip, String>, ZipRepositoryCustom {
+}
+```
+
+---
+
+`The implementation itself does not depend on Spring Data and can be a regular Spring bean. So you can use standard dependency injection behavior to inject references to other beans like a MongoTemplate, take part in aspects, and so on.`
+Ref: [Custom implementations for Spring Data repositories](http://docs.spring.io/spring-data/data-mongo/docs/1.10.4.RELEASE/reference/html/#repositories.custom-implementations)
+
 
 ---
 
@@ -190,9 +265,6 @@ public void insertStudents(List<Student> students) {
 
 ---
 
-# [fit] Big
-
----
 
 # [fit] Is
 
