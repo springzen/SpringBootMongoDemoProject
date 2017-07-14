@@ -44,7 +44,6 @@ export PATH=<mongodb-install-directory>/bin:$PATH
 ```
 brew install mongodb
 ```
-Test [readme](README.md)
 
 ---
 #### Installation
@@ -83,6 +82,9 @@ mongo --port <non default port>
 ## The Guide
 To simplify this session, I am using an already existing guide from PluralSight  
 [Introduction to MongoDB](https://github.com/pluralsight/guides/blob/master/published/sql/introduction-to-mongodb/article.md)
+[Original](https://www.pluralsight.com/guides/sql/introduction-to-mongodb)
+[Local](IntroToMongoDB.md)
+
 
 ---
 
