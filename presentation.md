@@ -44,7 +44,7 @@ export PATH=<mongodb-install-directory>/bin:$PATH
 ```
 brew install mongodb
 ```
-Test [readme](README.MD)
+Test [readme](README.md)
 
 ---
 #### Installation
