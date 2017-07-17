@@ -274,11 +274,3 @@ db.zipcodes.aggregate(
 );
 ```
 [How many towns or cities called Springfield are there in the US and what states are they located in?](https://www.quora.com/How-many-towns-or-cities-called-Springfield-are-there-in-the-US-and-what-states-are-they-located-in)
-
----
-
-
-* This works with both local files and web images
-* You don’t _have_ to drag the file, you can also type the Markdown yourself if you know how
-
-![left,filtered](http://deckset-assets.s3-website-us-east-1.amazonaws.com/colnago1.jpg)
