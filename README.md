@@ -2,11 +2,11 @@
 Project and resources for MongoDB with SpringBoot.
 
 ## Presentations
-[MongoDB Introduction](mongodbintro.md)
-[MongoDB Aggregation Introduction](mongodbaggregationintro.md)
-[Spring Boot Environment Setup](springbootenv.md)
-[Spring Boot Introduction](springbootintro.md)
-[MongoDB with Spring Boot](springbootmongodb.md)
+* [MongoDB Introduction](mongodbintro.md)  
+* [MongoDB Aggregation Introduction](mongodbaggregationintro.md)  
+* [Spring Boot Environment Setup](springbootenv.md)
+* [Spring Boot Introduction](springbootintro.md)
+* [MongoDB with Spring Boot](springbootmongodb.md)
 
 ## SpringBoot
 - [SpringBoot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
