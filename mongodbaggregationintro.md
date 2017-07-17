@@ -21,7 +21,7 @@ Download the set from <http://media.mongodb.org/zips.json>
 ```bash
 mongoimport --db sdjug --collection zipcodes --file zips.json
 # or
-mongoimport -d sdjug -c zipcodes zips.json
+mongoimport -d sdjug -c zipcodes --file zips.json
 ```
 
 
