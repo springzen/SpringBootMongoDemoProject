@@ -25,6 +25,16 @@ import com.imwsoftware.mongo.StudentRepository;
 import com.imwsoftware.mongo.model.Student;
 import com.imwsoftware.util.Utils;
 
+/**
+ * Class: MongoTestsStudent.java
+ *
+ * @author: Springzen
+ * @since: Jul 10, 2017
+ * @version: 1.0
+ *
+ *           Copyright (c) 2017 Springzen
+ *
+ */
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = ApplicationConfig.class)
 public class MongoTestsStudent {
