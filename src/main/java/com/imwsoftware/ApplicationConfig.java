@@ -23,7 +23,7 @@ class ApplicationConfig extends AbstractMongoConfiguration {
 
 	@Override
 	protected String getDatabaseName() {
-		return "imw";
+		return "sdjug";
 	}
 
 	@Override
