@@ -13,4 +13,8 @@ public interface StudentRepositoryCustom {
 	void insertStudents(List<Student> students);
 
 	<T> int bulkInsert(List<T> records, String collectionName);
+
+	<T> int bulkInsert(List<T> records);
+
+	List<Student> textSearch(String... strings);
 }

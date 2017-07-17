@@ -139,4 +139,11 @@ public class MongoTestsStudent {
 		});
 	}
 
+	@Test
+	public void findByTheStudentName() {
+		List<Student> student = repository.findByTheStudentName("Praveen Kumar");
+		assertNotNull(student);
+		System.out.println(Utils.toJson(student));
+	}
+
 }

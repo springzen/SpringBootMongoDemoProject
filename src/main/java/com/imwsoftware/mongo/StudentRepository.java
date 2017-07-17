@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
@@ -43,5 +44,13 @@ public interface StudentRepository extends PagingAndSortingRepository<Student, S
 	 * @return
 	 */
 	Stream<Student> readAllByNameNotNull();
+
+	/**
+	 * @ref: https://docs.spring.io/spring-data/data-mongo/docs/current/reference/html/#mongodb.repositories.queries.json-based
+	 * @param name
+	 * @return
+	 */
+	@Query(value = "{ 'name' : ?0 }", fields = "{ 'name' : 1, 'email' : 1}")
+	List<Student> findByTheStudentName(String name);
 
 }

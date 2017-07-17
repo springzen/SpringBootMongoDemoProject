@@ -21,7 +21,11 @@ import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.aggregation.GroupOperation;
 import org.springframework.data.mongodb.core.aggregation.ProjectionOperation;
 import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.TextCriteria;
+import org.springframework.data.mongodb.core.query.TextQuery;
 
+import com.imwsoftware.mongo.model.Zip;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 
@@ -200,6 +204,24 @@ public class ZipRepositoryImpl implements ZipRepositoryCustom {
 		 */
 		List<String> strings = aggregateToString(agg, "zipcodes");
 		printStringAggregates(strings);
+
+	}
+
+	/**
+	 * @Ref: https://spring.io/blog/2014/07/17/text-search-your-documents-with-spring-data-mongodb
+	 * @param words
+	 * @return
+	 */
+	@Override
+	public List<Zip> textSearch(String... words) {
+		TextCriteria criteria = TextCriteria.forDefaultLanguage().matchingAny(words);
+
+		Query query = TextQuery
+				.queryText(criteria);
+
+		List<Zip> zips = mongoTemplate.find(query, Zip.class);
+
+		return zips;
 
 	}
 

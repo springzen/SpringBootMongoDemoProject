@@ -1,6 +1,9 @@
 package com.imwsoftware.mongo;
 
+import java.util.List;
 import java.util.Optional;
+
+import com.imwsoftware.mongo.model.Zip;
 
 /**
  * Class: ZipRepositoryCustom.java
@@ -26,4 +29,6 @@ public interface ZipRepositoryCustom {
 	void averageCityPopulationByState();
 
 	void returnLargestAndSmallestCityByState();
+
+	List<Zip> textSearch(String... words);
 }

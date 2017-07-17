@@ -149,4 +149,22 @@ public class MongoTests {
 		}
 	}
 
+	/**
+	 * <code>
+	 db.zipcodes.find({ $text: { $search: "springfield" } })
+	 *</code>
+	 */
+	@Test
+	public void textSearch() {
+		try {
+			List<Zip> zips = repository.textSearch("springfield");
+			zips.forEach(zip -> {
+				System.out.println(zip);
+			});
+			System.out.println("Count: " + zips.size());
+		} catch (Exception e) {
+			fail("Failed to launch method. Cause: ", e.getMessage());
+		}
+	}
+
 }

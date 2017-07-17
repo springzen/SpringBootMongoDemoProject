@@ -1,0 +1,13 @@
+my:
+  property: Development Property
+  
+simple:
+  name: Simple development properties
+  enabled: false
+  description: ${simple.name} is a collection of properties
+  
+server:
+  port: 8989
+  
+management:
+  port: 9898

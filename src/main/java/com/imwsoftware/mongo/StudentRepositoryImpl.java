@@ -15,6 +15,8 @@ import org.springframework.data.mongodb.core.BulkOperations.BulkMode;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.TextCriteria;
+import org.springframework.data.mongodb.core.query.TextQuery;
 import org.springframework.data.mongodb.core.query.Update;
 
 import com.imwsoftware.mongo.model.Student;
@@ -41,6 +43,30 @@ public class StudentRepositoryImpl implements StudentRepositoryCustom {
 	public StudentRepositoryImpl() {
 	}
 
+	/**
+	 * <code>
+	 db.students.insert({
+		"name": "Bill Johnson",
+		"degree": "Cloud Computing",
+		"email": "bill@charity.com",
+		"subjects": [
+		{
+		  "name": "Microservices",
+		  "prof": "Prof. Mike Crows"
+		},
+		{
+		  "name": "Cloud Computing",
+		  "prof": "Prof. Tech Ninja"
+		},
+		{
+		  "name": "Web Development",
+		  "prof": "Prof. Chunky Monkey"
+		}
+		],
+		"phone": ["4152253357", "4155553232", "4154561234"]
+	});
+	 * </code>
+	 */
 	@Override
 	public void insertStudent(Student student) {
 		mongoTemplate.insert(student);
@@ -49,6 +75,11 @@ public class StudentRepositoryImpl implements StudentRepositoryCustom {
 	@Override
 	public void insertStudents(List<Student> students) {
 		mongoTemplate.insert(students, COLLECTION_STUDENTS);
+	}
+
+	@Override
+	public <T> int bulkInsert(List<T> records) {
+		return bulkInsert(records, COLLECTION_STUDENTS);
 	}
 
 	@Override
@@ -90,7 +121,7 @@ public class StudentRepositoryImpl implements StudentRepositoryCustom {
 	 * 
 	 * @param name
 	 * @param email
-	 * @return 
+	 * @return
 	 */
 	public int updateEmailForStudent(String name, String email) {
 		Update update = new Update();
@@ -166,5 +197,18 @@ public class StudentRepositoryImpl implements StudentRepositoryCustom {
 		Student student = mongoTemplate.findOne(query, Student.class);
 
 		return student;
+	}
+
+	@Override
+	public List<Student> textSearch(String... words) {
+		TextCriteria criteria = TextCriteria.forDefaultLanguage().matchingAny(words);
+
+		Query query = TextQuery
+				.queryText(criteria);
+
+		List<Student> students = mongoTemplate.find(query, Student.class);
+
+		return students;
+
 	}
 }
