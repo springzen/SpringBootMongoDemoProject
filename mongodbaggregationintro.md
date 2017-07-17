@@ -14,6 +14,19 @@ This session is based on MongoDB official guide titled: [Aggregation with the Zi
 
 ---
 
+## Import the data set
+
+Download the set from <http://media.mongodb.org/zips.json>
+
+```bash
+mongoimport --db sdjug --collection zipcodes --file zips.json
+# or
+mongoimport -d sdjug -c zipcodes zips.json
+```
+
+
+---
+
 ## Data model
 ```javascript
 {
@@ -274,3 +287,7 @@ db.zipcodes.aggregate(
 );
 ```
 [How many towns or cities called Springfield are there in the US and what states are they located in?](https://www.quora.com/How-many-towns-or-cities-called-Springfield-are-there-in-the-US-and-what-states-are-they-located-in)
+
+---
+
+# [fit] The End

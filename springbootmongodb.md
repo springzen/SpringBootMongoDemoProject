@@ -184,3 +184,64 @@ db.zipcodes.aggregate( [
 		.withOptions(newAggregationOptions()
 		.allowDiskUse(true).build());
 ```
+---
+
+# [fit] Unit Testing Spring Boot
+
+---
+
+### Testing MongoDB queries
+
+```java
+@RunWith(SpringRunner.class)
+@ContextConfiguration(classes = ApplicationConfig.class)
+public class MongoTestsStudent {
+
+	@Autowired
+	StudentRepository repository;
+
+	@Test
+	public void findAllSortedDesc() {
+		Iterable<Student> all = repository.findAll(new Sort(new Order(Direction.DESC, "name")));
+		assertThat(((Collection<?>) all).size() > 0, is(true));
+	}
+}
+
+```
+
+---
+
+### Testing REST endpoints
+
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@ContextConfiguration(classes = ApplicationConfig.class)
+@EnableAutoConfiguration
+@ComponentScan(basePackages = { "com.imwsoftware" })
+public class TestStudentRestEndpoints {
+
+	@Autowired
+	private TestRestTemplate restTemplate;
+
+	@Test
+	public void exampleTest() {
+		String body = this.restTemplate.getForObject("/students/list", String.class);
+
+		System.out.println(body);
+
+		assertThat(body != null, is(true));
+
+		try {
+			List<Student> students = Utils.convert(body, Student.class);
+			students.forEach(System.out::println);
+		} catch (IOException e) {
+			fail(e.getMessage());
+		}
+	}
+}
+```
+
+---
+
+# [fit] The End

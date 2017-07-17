@@ -475,5 +475,4 @@ logging.level.com.com.imwsoftware.util=debug
 
 ---
 
-
-![](http://cl.ly/image/2v3K3f3d0J1X/britney.gif)
+# [fit] The End
