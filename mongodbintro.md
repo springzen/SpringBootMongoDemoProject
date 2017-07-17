@@ -212,3 +212,26 @@ To list out all the collections in this particular database, there's a command f
 students
 >
 ```
+---
+
+##### IDEs
+* [Robo 3T](https://robomongo.org/) -> Free
+* [Studio 3T](https://studio3t.com/) -> Free for non-commercial uses. [FAQ](https://studio3t.com/buy/#faq)
+
+---
+
+##### Tools: mongostat
+* [mongostat](https://docs.mongodb.com/manual/reference/program/mongostat/)
+The **mongostat** utility provides a quick overview of the status of a currently running mongod or mongos instance. **mongostat** is functionally similar to the UNIX/Linux file system utility **vmstat**, but provides data regarding mongod and mongos instances.
+```
+mongostat --humanReadable true
+```
+
+---
+##### Tools: mongotop
+* [mongotop](https://docs.mongodb.com/manual/reference/program/mongotop/)
+**mongotop** provides a method to track the amount of time a MongoDB instance spends reading and writing data. **mongotop** provides statistics on a per-collection level. By default, **mongotop** returns values every second.
+Example:  In this example, **mongotop** will return every 15 seconds
+```
+mongotop 15
+```
