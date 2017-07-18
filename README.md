@@ -8,6 +8,10 @@ Project and resources for MongoDB with SpringBoot.
 * [Spring Boot Introduction](springbootintro.md)
 * [MongoDB with Spring Boot](springbootmongodb.md)
 
+## Queries
+
+[MongoDB Introduction Queries](mongodb/queries.md)
+
 ## SpringBoot
 - [SpringBoot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
 
