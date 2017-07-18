@@ -57,17 +57,37 @@ public class Application {
 }
 ```
 
+Wrapper for other annotations
+
+```java
+@SpringBootConfiguration
+@EnableAutoConfiguration
+```
+
 ---
 
 ```java
 @SpringBootApplication
 ```
-- Convenience annotation that wraps configuration enabled auto configuration and component scan annotation
+- Convenience annotation that wraps configuration, enables auto configuration and component scan annotation
 
 ```java
 @Configuration
 ```
 - states that a class contains methods with the bean annotation that will register with the application context upon startup
+
+---
+
+```java
+@Configuration
+public class CustomEndpointsConfig {
+
+	@Bean
+	public CustomEndpoint customEndpoint() {
+		return new CustomEndpoint("custom", false);
+	}
+}
+```
 
 ---
 
@@ -315,7 +335,7 @@ Enable /docs endpoint to see documentation and curl examples
 
 ## Spring Boot Actuator: endpoints
 
-[Enpoints List](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html)
+[Endpoints List](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html)
 Endpoints can be disabled from application properties
 ```
 endpoints.health.enabled=false

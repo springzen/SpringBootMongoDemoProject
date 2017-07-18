@@ -82,13 +82,12 @@ https://docs.docker.com/engine/installation/
 
 ## Creating a Spring Boot project
 - Using the Spring Initializr website
-- Using the Spring Command Line Interface (CLI)
 - Creating a Spring Boot application with the CLI
 - Creating a Spring Boot application with Spring STS
 
 ---
 
-## Spring Initializr -> https://start.spring.io/
+## Spring Initializr -> <https://start.spring.io/>
 Click on: Switch to the full version
 Select or type in the 'Search for dependencies'
 

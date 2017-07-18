@@ -18,7 +18,7 @@ class ApplicationConfig extends AbstractMongoConfiguration {
 
 	@Override
 	protected String getDatabaseName() {
-		return "imwsoftware";
+		return "sdjug";
 	}
 
 	@Override
@@ -38,7 +38,7 @@ class ApplicationConfig extends AbstractMongoConfiguration {
 
 ```java
 @Autowired
-MongoTemplate mongoTemplate;
+private MongoTemplate mongoTemplate;
 ```
 
 ---
