@@ -11,6 +11,7 @@ Project and resources for MongoDB with SpringBoot.
 ## Queries
 
 * [MongoDB Introduction Queries](mongodb/queries.md)
+* [MongoDB Aggregation Introduction Queries](mongodb/aggregationqueries.md)
 
 ## SpringBoot
 - [SpringBoot reference](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
