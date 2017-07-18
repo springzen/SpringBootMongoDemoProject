@@ -50,13 +50,23 @@ db.students.insert(
 ```
 
 ### Find
+
 ```javascript
 db.students.find();
+```
+
+```javascript
 db.students.find().pretty();
-
+```
+```javascript
 db.students.find({"name" : "Meaow Meaow"});
-db.students.find({"name" : "Meaow Meaow"}).pretty();
+```
 
+```javascript
+db.students.find({"name" : "Meaow Meaow"}).pretty();
+```
+
+```javascript
 db.students.find({"phone": "9840035007"}).pretty();
 ```
 
@@ -113,9 +123,13 @@ db.students.update({
     "points" : 15
   }
 });
+```
 
+```javascript
 db.students.find({"phone": "9840035007"}).pretty();
+```
 
+```javascript
 db.students.update({
   "name": "Praveen Kumar"
 }, {
@@ -123,9 +137,10 @@ db.students.update({
     "points" : 5
   }
 });
+```
 
+```javascript
 db.students.find({"phone": "9840035007"}).pretty();
-
 ```
 
 
@@ -185,23 +200,31 @@ db.students.find({"name": "Baahubali"}).pretty();
 
 ```javascript
 db.students.insert([{"name": "Bleh"}, {"name": "Bleh"}, {"name": "Blah"}]);
+```
 
+```javascript
 db.students.find();
+```
 
+```javascript
 db.students.remove({
   "name": "Blah"
 });
+```
 
+```javascript
 db.students.remove({
   "name": "Bleh"
 });
-
 ```
 
 ### Remove just one
+
 ```javascript
 db.students.insert([{"name": "Bleh"}, {"name": "Bleh"}]);
+```
 
+```javascript
 db.students.remove({
   "name": "Bleh"
 }, {
@@ -216,14 +239,18 @@ db.students.insert([
   {"name": "Bleh"},
   {"name": "Blah"}
 ]);
+```
 
+```javascript
 db.students.find({
   $or: [
     {"name": "Blah"},
     {"name": "Bleh"}
   ]
 });
+```
 
+```javascript
 db.students.remove({$or: [{"name": "Blah"}, {"name": "Bleh"}]});
 ```
 
@@ -242,9 +269,13 @@ db.students.insert([
   {"name": "Paati", "age": 55},
   {"name": "Thathaa", "age": 60}
 ]);
+```
 
+```javascript
 db.students.find();
+```
 
+```javascript
 db.students.find({
   "age": {
      $gt: 18
@@ -258,7 +289,9 @@ db.students.find({
 db.students.find().sort({
   "name": 1
 });
+```
 
+```javascript
 db.students.find().sort({
   "name": -1
 });
