@@ -28,6 +28,68 @@ The advantages of using documents are:
 * Embedded documents and arrays reduce need for expensive joins.
 * Dynamic schema supports fluent polymorphism.
 
+---
+
+## Polymorphic type [Source](https://stackoverflow.com/questions/36946572/meaning-of-dynamic-schema-supports-fluent-polymorphism-in-mongodb-doc)
+
+A **polymorphic** type is one whose operations can also be applied to values of some other type, or types. Lets have an example, consider the following MongoDB collection of cars
+
+```javascript
+{
+  "TYPE": "BASIC CAR",
+  "MAX_SPEED": 100,
+  "MILEAGE": 20,
+  "GEARS": 4,
+  "FEATURES": [
+     {
+      "AC": "yes"
+     }
+  ]
+}
+```
+
+The first 4 keys will be same for almost all cars ----> **polymorphic type**
+
+---
+## Polymorphic type...
+```javascript
+{
+  "TYPE": "SPORTS CAR",
+  "MAX_SPEED": 300,
+  "MILEAGE": 10,
+  "GEARS": 8,
+  "FEATURES": [
+    {
+      "AC": "yes"
+    },
+    {
+      "NITRO": "yes"
+    },
+    {
+      "NAVIGATION": "yes"
+    },
+    .
+    .
+    .
+    .
+    ... so on
+    ]
+    "ADVANCED PROTECTION" : "yes",
+    "SENSORS" : [
+      {
+        "OBSTACLE" : "yes"
+      }
+  ]
+}
+```
+
+---
+
+## Polymorphic type...
+
+The sports inherits the features of **BASIC CAR** and also has some its own features, that's satisfies Polymorphism.
+
+And coming to the part **Dynamic Schema** we can see that structure of document is different for both documents MongoDB won't restrict to a particular structure so that's satisfies **Dynamic Schema**.
 
 ---
 #### Installation
