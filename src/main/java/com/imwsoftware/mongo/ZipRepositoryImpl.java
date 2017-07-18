@@ -93,14 +93,6 @@ public class ZipRepositoryImpl implements ZipRepositoryCustom {
 
 		System.out.println(agg.toString());
 
-		// Aggregation agg = newAggregation(
-		// group("state").sum("pop").as("totalPop"),
-		// match(criteria),
-		// project("_id")
-		// .and("totalPop").as("totalPop"))
-		// .withOptions(newAggregationOptions()
-		// .allowDiskUse(true).build());
-
 		List<String> strings = aggregateToString(agg, "zipcodes");
 		printStringAggregates(strings);
 
